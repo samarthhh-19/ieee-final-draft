@@ -9,7 +9,7 @@ import useWindowWidth from "../hooks/useWindowWidth";
 
 const PastEvents = () => {
   const width = useWindowWidth();
-  const cardSwapWidth = width < 768 ? 780 : 1000;
+  const cardSwapWidth = width < 768 ? 700 : 770;
 
   const boxes = [
     {
@@ -38,9 +38,9 @@ const PastEvents = () => {
     <FadeContent blur={true} duration={900} easing="ease-out" initialOpacity={0}>
       <section className="flex flex-col lg:flex-row w-full min-h-screen text-white bg-black overflow-hidden relative px-4 lg:px-0 ">
         {/* Text Content */}
-        <div className="w-full lg:w-1/3 flex flex-col justify-center items-start px-2 py-6 lg:pl-12 lg:pr-8 z-10">
+        <div className="w-full lg:w-2/5 flex flex-col justify-center items-start text-center lg:text-left px-2 py-6 lg:pl-12 lg:pr-8 z-10">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Crafting Excellence: Pioneering Events by IEEE NSUT
+            Crafting Excellence: Pioneering Events by <span className="text-blue-400">IEEE NSUT</span>
           </h1>
           <p className="text-base sm:text-lg text-gray-300">
             With a strong focus on excellence and innovation, IEEE NSUT's events provide truly unparalleled opportunities for meaningful networking, hands-on skill-building, immersive learning, and effective real-world problem-solving.
@@ -48,7 +48,7 @@ const PastEvents = () => {
         </div>
 
         {/* Cards */}
-        <div className="w-full lg:w-2/3 flex items-center justify-center py-4 lg:py-0">
+        <div className="w-full lg:w-3/5 flex items-center justify-center py-4 lg:py-0">
           <div className="w-full h-full flex items-center justify-center">
             <CardSwap
               width={cardSwapWidth}
@@ -59,7 +59,7 @@ const PastEvents = () => {
             >
               {boxes.map((box, idx) => (
                 <Card key={idx}>
-                  <div className="flex flex-col h-full w-full overflow-hidden rounded-xl">
+                  <div className="flex flex-col h-full w-full overflow-hidden rounded-xl border-2 border-white">
                     <img
                       src={box.img}
                       alt={`box-${idx}`}
